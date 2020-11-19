@@ -1,0 +1,49 @@
+{
+    "name": "rwi/skelton",
+    "description": "Skelton is a structure variant of the PHP micro framework Slim that helps you reuse past projects by configurable routing and processes and definition of processes and providers.",
+    "type": "library",
+    "require": {
+        "php-di/php-di": "^6.0",
+        "selective/basepath": "^1.0",
+        "slim/psr7": "^1",
+        "slim/slim": "^4.4",
+        "tuupola/slim-jwt-auth": "^3.5"
+    },
+    "require-dev": {
+        "phpspec/prophecy": "^1.10",
+        "phpstan/phpstan": "^0.11.5",
+        "phpunit/phpunit": "^8.5",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ederico Rocha",
+            "email": "ederico.rocha@rwinteractive.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Skelton\\": "Skelton"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Skelton\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "@phpunit",
+            "@phpcs",
+            "@phpstan"
+        ],
+        "phpunit": "phpunit",
+        "phpcs": "phpcs",
+        "phpstan": "phpstan analyse Skelton --memory-limit=-1"
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    }
+}
